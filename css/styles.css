@@ -1,5 +1,6 @@
 :root {
     --company-color: #008AC9;
+    --hover-color:#0172a7;
     --company-button: #008AC9;
     --company-button-hover: #008AC9;
     --text-color: white;
@@ -21,6 +22,12 @@ body {
     background-color: #f0f8ff;
     height: 100vh;
     margin: 0;
+
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2c2c2c;
+
 }
 
 .container {

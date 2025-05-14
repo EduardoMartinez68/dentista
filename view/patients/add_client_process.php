@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     include('../../layaout/headerUser.php');
 ?>
 <?php
@@ -23,4 +24,6 @@
 
     $stmt->close();
     $conn->close();
+
+ob_end_flush();
 ?>

@@ -1,106 +1,150 @@
-<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<!--navabar-->
 <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-  }
+:root {
+    --company-color: #008AC9;
+    --hover-color:#0172a7;
+    --company-button: #008AC9;
+    --company-button-hover: #008AC9;
+    --text-color: white;
+    --body-color:#f8f9fa;
+    --card-color: #008AC9;
+    --button-success:#2e8b57;
+    --button-cancel:#dc3545;
+    --button-cancel-hover:#c82333;
+
+    
+    --color-text-navbar: #008AC9;
+    --color-navbar: #EBEAEF;
+    --fondo-oscuro: rgba(0, 0, 0, 0.5);
+}
+
 
   .navbar {
-    background-color: #6AC6E8;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .nav-container {
+    background-color: var(--company-color);
+    padding: 0.7rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
   }
 
   .logo {
-    height: 40px;
+    height: 35px;
   }
 
-  .nav-links {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--color-navbar);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1002;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
   }
 
-  .nav-links a {
+  .sidebar a {
+    padding: 14px 20px;
+    color: white;
     text-decoration: none;
-    color: white;
-    font-weight: 500;
+    font-size: 1rem;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    gap: 10px;
+    transition: background 0.2s;
+    color: var(--color-text-navbar);
   }
 
-  .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  .sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
   }
 
-  .menu-toggle {
-    background: none;
+  .sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: var(--color-text-navbar);
+  }
+
+  hr {
     border: none;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-    display: none;
+    height: 1px;
+    background: var(--color-text-navbar);
+    margin: 15px 0;
   }
 
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
 
-    .nav-links {
-      width: 100%;
-      flex-direction: column;
-      display: none;
-      margin-top: 10px;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .nav-links a {
-      padding: 10px;
-      justify-content: flex-start;
-    }
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
   }
 </style>
 
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<div class="navbar">
+  <button class="menu-btn" id="menu-btn">
+    <i class="fi fi-sr-menu-burger"></i>
+  </button>
+  <img src="https://cdn.pixabay.com/photo/2018/03/22/05/52/dentist-3249382_960_720.png" class="logo" alt="Logo">
+</div>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <img src="https://cdn.pixabay.com/photo/2018/03/22/05/52/dentist-3249382_960_720.png" alt="Clínica Dental" class="logo">
-    <button class="menu-toggle" id="mobile-menu">
-      <i class="fi fi-sr-menu-burger"></i>
-    </button>
-    <div class="nav-links" id="nav-links">
-      <a href="../../view/dentist/dashboard.php"><i class="fi fi-sr-home"></i> Dashboard 2</a>
-      <a href="../../view/tablets/patients.php"><i class="fi fi-sr-users"></i> Pacientes</a>
-      <a href="appointments.php"><i class="fi fi-sr-calendar"></i> Citas</a>
-      <a href="prescriptions.php"><i class="fi fi-sr-file-medical"></i> Recetas</a>
-      <a href="profile.php"><i class="fi fi-sr-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
-      <a href="../../logout.php"><i class="fi fi-sr-exit"></i> Cerrar Sesión</a>
-    </div>
-  </div>
-</nav>
+<div class="sidebar" id="sidebar">
+  <a href="javascript:void(0)" class="close-btn" id="close-btn"><i class="fi fi-sr-cross"></i></a>
+  <a href="../../view/dentist/dashboard.php"><i class="fi fi-sr-home"></i> Dashboard</a>
+  <a href="../../view/patients/patients.php"><i class="fi fi-sr-users"></i> Pacientes</a>
+  <a href="../../view/appointment/appointments.php"><i class="fi fi-sr-calendar"></i> Citas</a>
+  <a href="../../view/prescriptions.php"><i class="fi fi-sr-file-medical"></i> Recetas</a>
+  <hr>
+  <a href="../../view/dentist/profile.php"><i class="fi fi-sr-user"></i> <?= htmlspecialchars($_SESSION['username']) ?></a>
+  <a href="../../logout.php"><i class="fi fi-sr-exit"></i> Cerrar Sesión</a>
+</div>
+
+<div class="overlay" id="overlay"></div>
 
 <script>
-  document.getElementById('mobile-menu').addEventListener('click', function () {
-    document.getElementById('nav-links').classList.toggle('active');
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  menuBtn.addEventListener('click', () => {
+    sidebar.style.left = '0';
+    overlay.classList.add('active');
   });
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  function closeMenu() {
+    sidebar.style.left = '-260px';
+    overlay.classList.remove('active');
+  }
 </script>
