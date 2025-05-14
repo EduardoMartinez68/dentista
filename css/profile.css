@@ -1,0 +1,60 @@
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.profile {
+    padding: 20px;
+    margin-top: 20px;
+}
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.profile h1 {
+    text-align: center;
+    color: var(--company-color);
+}
+.profile p {
+    text-align: center;
+    color: #666;
+}
+.location {
+    margin-top: 20px;
+    text-align: center;
+}
+.location h2 {
+    color: #333;
+}
+.location p {
+    color: #666;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.button-container .reserve {
+    background: var(--company-color); /* Verde para reservar */
+}
+.button-container .reserve:hover {
+    background: var(--company-button-hover);
+}
+.button-container .whatsapp {
+    background: #25d366; /* Verde de WhatsApp */
+}
+.button-container .whatsapp:hover {
+    background: #1ebe50;
+}

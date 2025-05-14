@@ -1,0 +1,53 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--body-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+}
+.appointments {
+    margin-top: 20px;
+}
+.appointment {
+    padding: 10px;
+    border: 1px solid var(--company-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.appointment h3 {
+    margin: 0 0 5px 0;
+}
+.appointment p {
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--company-button);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card:hover {
+    background-color: var(--company-button-hover);
+}

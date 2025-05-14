@@ -1,0 +1,88 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+.search-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.search-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+}
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--company-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add-button:hover {
+    background-color: var(--company-button-hover);
+}
+.table-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: var(--company-color);
+    color: white;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+.no-results {
+    text-align: center;
+    color: #666;
+}
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+.action-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-button {
+    background-color: var(--company-button);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 70px;
+    text-align: center;
+    align-items: center;
+}
+.edit-button:hover {
+    background-color: var(--company-button-hover);
+}
+.delete-button {
+    text-align: center;
+    align-items: center;
+    width: 70px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--button-cancel);
+    color: white;
+}
+.delete-button:hover {
+    cursor: pointer;
+    background-color: var(--button-cancel-hover);
+}

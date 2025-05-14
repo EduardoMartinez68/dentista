@@ -1,0 +1,55 @@
+CREATE DATABASE dental_clinic;
+USE dental_clinic;
+
+-- Tabla de usuarios
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    role ENUM('patient', 'dentist') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de dentistas
+CREATE TABLE dentists (
+    dentist_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    business_name VARCHAR(100),
+    address VARCHAR(255),
+    phone VARCHAR(20),
+    whatsapp VARCHAR(20),
+    profile_picture VARCHAR(255),
+    description TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Tabla de pacientes
+CREATE TABLE patients (
+    patient_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Tabla de citas
+CREATE TABLE appointments (
+    appointment_id INT AUTO_INCREMENT PRIMARY KEY,
+    dentist_id INT NOT NULL,
+    patient_id INT NOT NULL,
+    appointment_date DATETIME NOT NULL,
+    status ENUM('active', 'completed') DEFAULT 'active',
+    notes TEXT,
+    FOREIGN KEY (dentist_id) REFERENCES dentists(dentist_id),
+    FOREIGN KEY (patient_id) REFERENCES patients(patient_id)
+);
+
+-- Tabla de horarios disponibles
+CREATE TABLE available_hours (
+    hour_id INT AUTO_INCREMENT PRIMARY KEY,
+    dentist_id INT NOT NULL,
+    day_of_week ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    FOREIGN KEY (dentist_id) REFERENCES dentists(dentist_id)
+);

@@ -1,0 +1,32 @@
+.navbar {
+    background-color: var(--company-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    width: 100px;
+}
+
+.navbar .nav-links,
+.navbar .user-links {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .user-links a {
+    margin-left: 20px;
+}

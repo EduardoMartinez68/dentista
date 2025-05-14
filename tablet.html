@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Semanal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            height: 100vh;
+        }
+
+        .schedule-container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .schedule-header {
+            display: flex;
+            justify-content: space-between; /* Changed from space-around to space-between */
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .schedule-header div {
+            flex: 1;
+            margin: 0 10px; /* Added margin for spacing */
+            font-weight: bold;
+        }
+
+        .schedule-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .time-slot {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .time-slot:last-child {
+            border-bottom: none;
+        }
+
+        .time-slot div {
+            flex: 1;
+            margin: 0 10px; /* Added margin for spacing */
+            padding: 10px;
+            text-align: center;
+        }
+
+        .time {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .event {
+            background-color: rgba(74, 144, 226, 0.2);
+            color: #4a90e2;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .event-marketing {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+
+        .event-meeting {
+            background-color: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+
+        .event-research {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+
+        .event-lunch {
+            background-color: rgba(155, 89, 182, 0.2);
+            color: #9b59b6;
+        }
+
+        .event-empty {
+            background-color: rgba(149, 165, 166, 0.2);
+            color: #95a5a6;
+        }
+
+        .appointment-button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .appointment-button:hover {
+            background-color: #357ABD;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container-button-left{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <br>
+    <h2>Semanal</h2>
+    <hr>
+    <br>
+    <div class="schedule-container">
+        <div class="container-button-left">
+            <button class="appointment-button">Agendar una cita</button>
+        </div>
+        <div class="schedule-header">
+            <div>Lunes</div>
+            <div>Martes</div>
+            <div>Miércoles</div>
+            <div>Jueves</div>
+            <div>Viernes</div>
+            <div>Sábado</div>
+            <div>Domingo</div>
+        </div>
+        <div class="schedule-body">
+            <div class="time-slot">
+                <div class="time">8:00 - 9:00</div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-marketing">Marketing</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">9:00 - 10:00</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Investigación</div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">10:00 - 11:00</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">11:00 - 12:00</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">12:00 - 1:00</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+                <div class="event event-lunch">Almuerzo</div>
+            </div>
+            <div class="time-slot">
+                <div class="time">1:00 - 2:00</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Investigación</div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">2:00 - 3:00</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">3:00 - 4:00</div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-research">Investigación</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+            <div class="time-slot">
+                <div class="time">4:00 - 5:00</div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-meeting">Reunión</div>
+                <div class="event event-empty"></div>
+                <div class="event event-research">Desarrollo</div>
+                <div class="event event-empty"></div>
+                <div class="event event-empty"></div>
+            </div>
+        </div>
+    </div>
+</center>
+</body>
+</html>

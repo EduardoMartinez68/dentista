@@ -1,0 +1,193 @@
+:root {
+    --company-color: #008AC9;
+    --company-button: #008AC9;
+    --company-button-hover: #008AC9;
+    --text-color: white;
+    --body-color:#f8f9fa;
+    --card-color: #008AC9;
+    --button-success:#2e8b57;
+    --button-cancel:#dc3545;
+    --button-cancel-hover:#c82333;
+
+    
+    --color-text-navbar: #008AC9;
+    --color-navbar: #EBEAEF;
+    --fondo-oscuro: rgba(0, 0, 0, 0.5);
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+.input-group textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus{
+    border-color: var(--company-color);
+    outline: none;
+}
+
+.input-group textarea:focus{
+    border-color: var(--company-color);
+    outline: none;
+}
+
+.button {
+    background-color: var(--company-button);
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: var(--company-button-hover);
+}
+.register-link {
+    margin-top: 20px;
+    display: block;
+    color: var(--company-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/*------------------------------------inputs-------------------------------------*/
+.select-patient {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    appearance: none; /* Remove default arrow in most browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.09 6.8"><path d="M.15 5.55l.35.35 1.5 1.5.35.35.35-.35 1.5-1.5.35-.35-.35-.35L2.35 3.7l-1.5-1.5-.35-.35-.35.35-1.5 1.5-.35.35z" fill="%23777"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px 12px;
+}
+
+.select-patient:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.select-patient option {
+    padding: 10px;
+}
+
+/*-----------------------------------------------------mensajes--------------------------------------*/
+  .alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 1rem auto;
+    max-width: 500px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    position: relative;
+    animation: fadeIn 0.4s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .alert-success {
+    background-color: #e0f7ef;
+    color: #2e7d32;
+  }
+
+  .alert-error {
+    background-color: #fdecea;
+    color: #c62828;
+  }
+
+  .alert .icon {
+    font-size: 20px;
+  }
+
+  .alert .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .alert .close-btn:hover {
+    transform: scale(1.2);
+  }
+
+  .alert.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
